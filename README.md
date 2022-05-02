@@ -1,6 +1,8 @@
 # PyBuster
 
-Recreation of the [GoBuster](https://github.com/OJ/gobuster) tool written in Python3. Bruteforce tool used to discover Web URIs for websites, Vhost names on webservers, and DNS subdomains.
+Recreation of the [GoBuster](https://github.com/OJ/gobuster) tool written in Python3.  
+
+Bruteforce tool used to discover Web URIs for websites, Vhost names on webservers, and DNS subdomains.
 
 # Prerequisites
 - [Python3](https://www.python.org/downloads/)
