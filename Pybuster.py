@@ -15,13 +15,13 @@ def DNSMode(wordlist, domain_name):
 			pass
 
 def VHOSTMode(wordlist, domain_name):
-
+	headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 	for subdomain in wordlist:
 		url = f"https://{subdomain}.{domain_name}"
 
 		try:
 
-			r = requests.get(url, timeout=5)
+			r = requests.get(url, timeout=5, headers=headers)
 			status_code = r.status_code
 			size = len(r.content)
 			print(f"[+] {url} ({status_code}) [Size: {size}]")
@@ -34,12 +34,13 @@ def VHOSTMode(wordlist, domain_name):
 			sys.exit()
 
 def DIRMode(wordlist, domain_name):
+	headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
 	for directory in wordlist:
-			url = f"https://www.{domain_name}/{directory}"
+			url = f"https://www.{domain_name}/{directory}/"
 
 			try:
 
-				r = requests.get(url)
+				r = requests.get(url, headers=headers)
 				status_code = r.status_code
 				size = len(r.content)
 				print(f"[+] {url} ({status_code}) [Size: {size}]")
@@ -48,7 +49,7 @@ def DIRMode(wordlist, domain_name):
 				pass
 
 if __name__ == '__main__':
-	parser = argparse.ArgumentParser(usage = "python3 URIDiscovery.py -m [MODE] -w [path/to/wordlist]", formatter_class = argparse.RawTextHelpFormatter)
+	parser = argparse.ArgumentParser(usage = "python3 URIDiscovery.py -m [MODE] -u [URL] -w [path/to/wordlist]", formatter_class = argparse.RawTextHelpFormatter)
 	parser.add_argument("-m", "--mode", required = True, 
 	help = """dir    Directory/file bruteforce mode\nDNS    subdomain bruteforce mode\nVHOST  bruteforce mode""")
 	parser.add_argument("-u", "--url", required = True, help = "Address of Website")
