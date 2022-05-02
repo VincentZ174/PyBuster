@@ -5,6 +5,7 @@ Recreation of the [GoBuster](https://github.com/OJ/gobuster) tool written in Pyt
 # Prerequisites
 - [Python3](https://www.python.org/downloads/)
 - [Requests](https://pypi.org/project/requests/)
+- [Wordlists](https://github.com/danielmiessler/SecLists)
 
 # Usage
 
