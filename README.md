@@ -9,7 +9,7 @@ Recreation of the [GoBuster](https://github.com/OJ/gobuster) tool written in Pyt
 # Usage
 
 ```
-usage: python3 URIDiscovery.py -m [MODE] -w [path/to/wordlist]
+usage: python3 URIDiscovery.py -m [MODE] -u [URL] -w [path/to/wordlist]
 
 options:
   -h, --help            show this help message and exit
