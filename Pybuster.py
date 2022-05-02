@@ -65,6 +65,8 @@ if __name__ == '__main__':
 			DIRMode(wordlist, args.url)
 		elif args.mode.lower() == "vhost":
 			VHOSTMode(wordlist, args.url)
+		else:
+			DNSMode(wordlist, args.url)
 	except KeyboardInterrupt:
 		sys.exit()
 
